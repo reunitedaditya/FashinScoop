@@ -10,4 +10,7 @@ import UIKit
 
 class TopCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var punchLine: UILabel!
+    
 }

@@ -12,24 +12,74 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        aroundTheGlobeCollectionView.delegate = self
+        aroundTheGlobeCollectionView.dataSource = self
 
-        // Do any additional setup after loading the view.
+        initilizeGestures()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  
+    
+    let globeArray = ["adidas" , "alone" , "partyWear" , "christmasSkirt" , "color" , "geek" , "globalTrends" , "Naps" ,"Vans" , "Gold" , "footwear" , "yellow"]
+  
+    
+    func initilizeGestures(){
+        
+        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.handleTop))
+        
+        self.view.addGestureRecognizer(tap)
+        
+        
+    }
+    @IBOutlet weak var aroundTheGlobeCollectionView: UICollectionView!
+    
+    
+    
+    
+    
+    func handleTop(sender : UITapGestureRecognizer) {
+       
+        view.endEditing(true)
+        
     }
     
+    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension SearchViewController : UICollectionViewDelegate , UICollectionViewDataSource {
+    
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return globeArray.count
     }
-    */
-
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GlobeCell", for: indexPath) as! GlobeCollectionViewCell
+        
+        cell.ImageOfCell.image = UIImage(named : globeArray[indexPath.row])
+        
+        
+        
+        return cell
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

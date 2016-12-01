@@ -15,6 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+          UITabBar.appearance().tintColor = UIColor(red:0.98, green:0.21, blue:0.37, alpha:1.0)
+        
+        let navigationBarAppearace = UINavigationBar.appearance()
+      
+        navigationBarAppearace.barTintColor = UIColor.white
+        navigationBarAppearace.tintColor = UIColor.white
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
+        
+        let navigationController = UINavigationController()
+        
+        navigationController.navigationBar.frame.origin.y = -15
+
         // Override point for customization after application launch.
         return true
     }

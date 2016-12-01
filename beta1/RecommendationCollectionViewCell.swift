@@ -10,4 +10,9 @@ import UIKit
 
 class RecommendationCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    @IBOutlet weak var mainImageView: UIImageView!
+    
 }

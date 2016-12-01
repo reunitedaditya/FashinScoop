@@ -10,4 +10,9 @@ import UIKit
 
 class GlobeCollectionViewCell: UICollectionViewCell {
     
+    
+    
+    @IBOutlet weak var ImageOfCell: UIImageView!
+    
+    
 }

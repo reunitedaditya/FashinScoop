@@ -10,4 +10,5 @@ import UIKit
 
 class BottomCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageFrame: UIImageView!
 }
